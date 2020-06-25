@@ -25,35 +25,33 @@ class Personagem extends Animacao {
       this.y = this.chao;
       this.pulos = 0;
     }
-    
   }
 
   estaColidindo(inimigo) {
     const precisao = .7;
     noFill();
     rect(
-      this.x,
-      this.y,
-      this.largura,
-      this.altura
+      this.x + 15,
+      this.y + 10,
+      this.largura * 0.7,
+      this.altura * 0.9
     );
     rect(
-      inimigo.x,
-      inimigo.y,
-      inimigo.largura,
-      inimigo.altura
+      inimigo.x + 20,
+      inimigo.y + 15,
+      inimigo.largura * 0.8,
+      inimigo.altura * 0.8
     );
     const colisao = collideRectRect(
-      this.x,
-      this.y,
-      this.largura * precisao,
-      this.altura * precisao,
-      inimigo.x,
-      inimigo.y,
-      inimigo.largura * precisao,
-      inimigo.altura * precisao
+      this.x + 15,
+      this.y + 10,
+      this.largura * 0.7,
+      this.altura * 0.9,
+      inimigo.x + 20,
+      inimigo.y + 15,
+      inimigo.largura * 0.8,
+      inimigo.altura * 0.8
     );
-
     return colisao;
   }
 }
