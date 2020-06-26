@@ -3,6 +3,7 @@ function setup() {
   jogo = new Jogo();
   jogo.setup();
   telaInicial = new TelaInicial();
+  vida  = new Vida(fita.configuracoes.vidaMaxima, fita.configuracoes.vidaInicial);
   frameRate(40);
   somDoJogo.loop();
   cenas = {
